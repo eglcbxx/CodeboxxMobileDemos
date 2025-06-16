@@ -1,18 +1,10 @@
 /*
 Divider Component
 -----------------
-A horizontal line separator for dividing content.
+A simple horizontal line component for visually separating content sections.
 
-Usage:
-import Divider from './components/Divider';
-
-<Divider />
-<Divider color="#000" thickness={2} marginVertical={16} />
-
-Props:
-- color?: string // Line color (default: #ccc)
-- thickness?: number // Line thickness (default: 1)
-- marginVertical?: number // Vertical margin (default: 8)
+Copy this file to your project's components folder and import it where needed.
+Perfect for separating content sections, list items, and layout elements.
 */
 
 import React from 'react';

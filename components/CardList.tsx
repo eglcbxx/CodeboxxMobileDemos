@@ -1,21 +1,10 @@
 /*
 CardList Component
 ------------------
-Renders a list of cards using FlatList.
+A reusable FlatList wrapper for rendering lists of cards or items with consistent styling.
 
-Usage:
-import CardList from './components/CardList';
-
-<CardList
-  data={dataArray}
-  renderItem={({ item }) => <YourCardComponent item={item} />}
-  keyExtractor={(item, idx) => item.id || idx.toString()}
-/>
-
-Props:
-- data: T[] // Array of items
-- renderItem: ({ item }: { item: T }) => React.ReactElement // Render function
-- keyExtractor: (item: T, index: number) => string // Unique key for each item
+Copy this file to your project's components folder and import it where needed.
+Perfect for displaying lists of cards, items, or any repeated content with scroll functionality.
 */
 
 import React from 'react';

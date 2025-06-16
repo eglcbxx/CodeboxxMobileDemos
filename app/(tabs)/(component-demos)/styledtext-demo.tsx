@@ -1,41 +1,45 @@
 /*
 StyledText Demo
---------------
-This demo shows how to use the StyledText component for consistent, reusable text styles.
-
-Usage Steps:
-1. Import the StyledText component:
-   import StyledText from '@/components/StyledText';
-
-2. Use the component in your JSX for headings, paragraphs, and captions:
-   <StyledText type="heading1">Heading 1</StyledText>
-   <StyledText type="heading2">Heading 2</StyledText>
-   <StyledText type="paragraph">This is a paragraph.</StyledText>
-   <StyledText type="caption" color="#888">Small caption text.</StyledText>
-
-Props:
-- type?: 'heading1' | 'heading2' | 'paragraph' | 'caption' (default: 'paragraph') – The text style.
-- color?: string – Text color (default: #333).
-- style?: object – Additional style overrides.
-- children: ReactNode – The text content.
-
-To use StyledText in another component, import it and use the type prop to select the style you want, with optional color and style overrides.
+---------------
+Copy the StyledText component for consistent typography throughout your app.
+Perfect for maintaining text hierarchy with heading and body styles across your entire application.
 */
 
-import StyledText from '@/components/StyledText';
 import { ScrollView, View } from 'react-native';
+import StyledText from '../../../components/StyledText';
+import { ThemedText } from '../../../components/ThemedText';
 
 export default function StyledTextDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <View style={{ gap: 16, marginVertical: 16 }}>
-        <StyledText type="heading1">Heading 1</StyledText>
-        <StyledText type="heading2">Heading 2</StyledText>
+    <ScrollView style={{ flex: 1, padding: 16 }}>
+      <ThemedText style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 16 }}>
+        StyledText Component Demo
+      </ThemedText>
+
+      <View style={{ gap: 16 }}>
+        <StyledText type="heading1">Main Heading (H1)</StyledText>
         <StyledText type="paragraph">
-          This is a paragraph. You can use the <StyledText type="caption">StyledText</StyledText> component for consistent text styles.
+          This is a paragraph that follows the main heading. It demonstrates the default paragraph styling with proper line height and font size.
         </StyledText>
-        <StyledText type="caption" color="#888">
-          Small caption text.
+        
+        <StyledText type="heading2">Subheading (H2)</StyledText>
+        <StyledText type="paragraph">
+          Another paragraph under the subheading. StyledText ensures consistent typography across your entire application.
+        </StyledText>
+        
+        <StyledText type="paragraph">
+          You can also customize colors: 
+          <StyledText type="paragraph" color="#007bff"> blue text</StyledText>, 
+          <StyledText type="paragraph" color="#28a745"> green text</StyledText>, or 
+          <StyledText type="paragraph" color="#dc3545"> red text</StyledText>.
+        </StyledText>
+        
+        <StyledText type="caption" color="#666">
+          This is caption text, perfect for small details, footnotes, or secondary information.
+        </StyledText>
+        
+        <StyledText type="caption" color="#999">
+          Another caption with a lighter color for even more subtle text.
         </StyledText>
       </View>
     </ScrollView>

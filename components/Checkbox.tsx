@@ -1,16 +1,10 @@
 /*
 Checkbox Component
 ------------------
-A simple checkbox input for forms.
+A clean checkbox input component for forms and selection interfaces.
 
-Usage:
-import Checkbox from './components/Checkbox';
-
-<Checkbox checked={true} onChange={setChecked} />
-
-Props:
-- checked: boolean // Whether checked
-- onChange: (checked: boolean) => void // Callback when toggled
+Copy this file to your project's components folder and import it where needed.
+Perfect for forms, todo lists, and multi-selection interfaces.
 */
 
 import React from 'react';

@@ -1,17 +1,10 @@
 /*
 HelloWave Component
 -------------------
-Displays a waving hand emoji with a waving animation.
+An animated waving hand emoji component with smooth waving animation.
 
-Usage:
-1. Import the component:
-   import { HelloWave } from './components/HelloWave';
-
-2. Use in your JSX:
-   <HelloWave />
-
-Props:
-- None
+Copy this file to your project's components folder and import it where needed.
+Perfect for welcome screens, greetings, and adding a friendly touch to your app.
 */
 
 import { useEffect } from 'react';

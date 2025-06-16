@@ -1,18 +1,10 @@
 /*
 AlertBox Component
-------------------
-Shows a dismissible alert/message box with different types.
+-------------
+A clean alert/notification component with different visual styles for various message types.
 
-Usage:
-import AlertBox from './components/AlertBox';
-
-<AlertBox message="This is an info alert!" type="info" onClose={() => setShow(false)} />
-<AlertBox message="Success!" type="success" />
-
-Props:
-- message: string // Alert message
-- type?: 'success' | 'error' | 'info' | 'warning' // Alert type (default: 'info')
-- onClose?: () => void // Optional close handler
+Copy this file to your project's components folder and import it where needed. 
+Supports success, error, info, and warning styles with optional dismiss functionality.
 */
 
 import React from 'react';
@@ -24,15 +16,15 @@ interface AlertBoxProps {
   onClose?: () => void;
 }
 
-const colors = {
+const alertColors = {
   success: '#d4edda',
-  error: '#f8d7da',
+  error: '#f8d7da', 
   info: '#d1ecf1',
   warning: '#fff3cd',
 };
 
 const AlertBox: React.FC<AlertBoxProps> = ({ message, type = 'info', onClose }) => (
-  <View style={[styles.container, { backgroundColor: colors[type] }]}> 
+  <View style={[styles.container, { backgroundColor: alertColors[type] }]}> 
     <Text style={styles.text}>{message}</Text>
     {onClose && (
       <TouchableOpacity onPress={onClose} style={styles.close}>

@@ -1,24 +1,10 @@
 /*
 ParallaxScrollView Component
----------------------------
-A scroll view with a parallax header effect and themed background.
+----------------------------
+A scroll view with parallax header effect and themed background support.
 
-Usage:
-1. Import the component:
-   import ParallaxScrollView from './components/ParallaxScrollView';
-
-2. Use in your JSX:
-   <ParallaxScrollView
-     headerImage={<Image source={...} />}
-     headerBackgroundColor={{ light: '#fff', dark: '#222' }}
-   >
-     <Text>Content goes here</Text>
-   </ParallaxScrollView>
-
-Props:
-- headerImage: ReactElement // The image or element to display in the header
-- headerBackgroundColor: { light: string; dark: string } // Header background colors for light/dark
-- children: ReactNode // Content below the header
+Copy this file to your project's components folder and import it where needed.
+Perfect for creating engaging scrollable screens with dynamic header animations.
 */
 
 import type { PropsWithChildren, ReactElement } from 'react';

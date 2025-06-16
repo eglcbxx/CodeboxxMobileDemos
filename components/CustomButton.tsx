@@ -1,19 +1,10 @@
 /*
 CustomButton Component
 ---------------------
-A customizable button for user actions.
+A customizable button component with support for different colors and disabled states.
 
-Usage:
-import CustomButton from './components/CustomButton';
-
-<CustomButton title="Click Me" onPress={() => alert('Clicked!')} />
-<CustomButton title="Disabled" disabled color="#888" onPress={() => {}} />
-
-Props:
-- title: string // Button text
-- onPress: (event: GestureResponderEvent) => void // Function to call on press
-- color?: string // Button background color (default: #007bff)
-- disabled?: boolean // Disable the button (default: false)
+Copy this file to your project's components folder and import it where needed.
+Perfect for actions, forms, and interactive elements throughout your app.
 */
 
 import React from 'react';
@@ -26,10 +17,14 @@ interface CustomButtonProps {
   disabled?: boolean;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ title, onPress, color, disabled }) => {
+const CustomButton: React.FC<CustomButtonProps> = ({ title, onPress, color = '#007bff', disabled = false }) => {
   return (
     <TouchableOpacity
-      style={[styles.button, { backgroundColor: color || '#007bff' }, disabled && styles.disabled]}
+      style={[
+        styles.button, 
+        { backgroundColor: color }, 
+        disabled && styles.disabled
+      ]}
       onPress={onPress}
       disabled={disabled}
     >

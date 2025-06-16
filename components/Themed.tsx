@@ -5,27 +5,11 @@
 
 /*
 Themed Component Utilities
--------------------------
-Provides themed Text and View components that automatically adapt to light and dark modes using Expo's color scheme system.
+---------------------------
+Provides themed Text and View components that automatically adapt to light and dark modes.
 
-Usage:
-1. Import the themed components:
-   import { Text, View, useThemeColor } from './components/Themed';
-
-2. Use <Text> and <View> in place of React Native's default components to get automatic theming:
-   <View>
-     <Text>My themed text</Text>
-   </View>
-
-3. To customize colors, pass lightColor and darkColor props:
-   <Text lightColor="#000" darkColor="#fff">Custom themed text</Text>
-
-4. You can also use useThemeColor() to get a themed color value for custom styles.
-
-Props:
-- lightColor?: string // Color for light mode
-- darkColor?: string // Color for dark mode
-- All other standard Text/View props are supported.
+Copy this file to your project's components folder and import it where needed.
+Perfect for maintaining consistent theming across your app with automatic dark/light mode support.
 */
 
 import { Text as DefaultText, View as DefaultView } from 'react-native';

@@ -1,23 +1,12 @@
 /*
 Avatar Demo
 -----------
-This demo shows how to use the Avatar component to display user images or initials.
+Demonstrates the Avatar component showing both image and initials variants in different sizes.
 
-Usage Steps:
-1. Import the Avatar component:
-   import Avatar from '@/components/Avatar';
-
-2. Use the component in your JSX:
-   <Avatar initials="AB" />
-   <Avatar uri="https://i.pravatar.cc/100" size={48} />
-   <Avatar initials="CD" size={64} />
-
-Props:
-- uri?: string – The image URL for the avatar.
-- initials?: string – Fallback initials if no image is provided.
-- size?: number (default: 40) – The size of the avatar in pixels.
-
-To use Avatar in another component, import it and provide either a uri or initials, and optionally a size.
+Copy-paste instructions:
+1. Copy the Avatar.tsx file to your components folder
+2. Import: import Avatar from './components/Avatar';
+3. Use with uri (for images) or initials (for text fallback) and optional size prop
 */
 
 import Avatar from '@/components/Avatar';
@@ -27,9 +16,10 @@ export default function AvatarDemo() {
   return (
     <ScrollView contentContainerStyle={{ padding: 16 }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 16, marginVertical: 16 }}>
-        <Avatar initials="AB" />
+        <Avatar initials="JD" />
         <Avatar uri="https://i.pravatar.cc/100" size={48} />
-        <Avatar initials="CD" size={64} />
+        <Avatar initials="AB" size={64} />
+        <Avatar uri="https://i.pravatar.cc/150" size={80} />
       </View>
     </ScrollView>
   );

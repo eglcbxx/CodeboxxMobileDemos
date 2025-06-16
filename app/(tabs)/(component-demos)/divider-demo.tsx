@@ -13,11 +13,15 @@ Usage Steps:
    <StyledText type="paragraph">Below the divider</StyledText>
 
 Props:
-- color?: string (default: #ccc) – The color of the divider line.
-- thickness?: number (default: 1) – The thickness of the divider line.
-- marginVertical?: number (default: 8) – The vertical margin around the divider.
+/*
+Divider Demo
+------------
+Demonstrates the Divider component for separating content with customizable styling.
 
-To use Divider in another component, import it and place it between elements you want to separate. You can customize its appearance with the optional props.
+Copy-paste instructions:
+1. Copy the Divider.tsx file to your components folder
+2. Import: import Divider from './components/Divider';
+3. Place between content elements with optional color, thickness, and margin props
 */
 
 import Divider from '@/components/Divider';
@@ -27,10 +31,14 @@ import { ScrollView, View } from 'react-native';
 export default function DividerDemo() {
   return (
     <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <View style={{ gap: 16, marginVertical: 16 }}>
-        <StyledText type="paragraph">Above the divider</StyledText>
+      <View style={{ marginVertical: 16 }}>
+        <StyledText type="paragraph">Section 1: Content above the default divider</StyledText>
         <Divider />
-        <StyledText type="paragraph">Below the divider</StyledText>
+        <StyledText type="paragraph">Section 2: Content between dividers</StyledText>
+        <Divider color="#007bff" thickness={2} marginVertical={16} />
+        <StyledText type="paragraph">Section 3: Content after custom blue divider</StyledText>
+        <Divider color="#28a745" thickness={3} marginVertical={24} />
+        <StyledText type="paragraph">Section 4: Final content section</StyledText>
       </View>
     </ScrollView>
   );

@@ -1,17 +1,10 @@
 /*
 SimpleInput Component
---------------------
-A basic text input with an optional label.
+---------------------
+A clean text input component with optional label for forms and user input.
 
-Usage:
-import SimpleInput from './components/SimpleInput';
-
-<SimpleInput label="Username" value={username} onChangeText={setUsername} />
-<SimpleInput placeholder="Type here..." />
-
-Props:
-- label?: string // Optional label above the input
-- ...TextInputProps // Any other TextInput props (value, onChangeText, placeholder, etc.)
+Copy this file to your project's components folder and import it where needed.
+Perfect for forms, search inputs, and any text input needs throughout your app.
 */
 
 import React from 'react';

@@ -1,18 +1,10 @@
 /*
 Avatar Component
 ----------------
-Displays a user avatar with an image or initials.
+A user profile picture component that displays either an image or fallback initials.
 
-Usage:
-import Avatar from './components/Avatar';
-
-<Avatar uri="https://example.com/photo.jpg" size={48} />
-<Avatar initials="AB" size={40} />
-
-Props:
-- uri?: string // Image URL
-- initials?: string // Fallback initials
-- size?: number // Avatar size (default: 40)
+Copy this file to your project's components folder and import it where needed.
+Perfect for user profiles, comment sections, and contact lists.
 */
 
 import React from 'react';
@@ -24,15 +16,23 @@ interface AvatarProps {
   size?: number;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ uri, initials, size = 40 }) => (
-  <View style={[styles.container, { width: size, height: size, borderRadius: size / 2 }]}> 
-    {uri ? (
-      <Image source={{ uri }} style={{ width: size, height: size, borderRadius: size / 2 }} />
-    ) : (
-      <Text style={styles.initials}>{initials || '?'}</Text>
-    )}
-  </View>
-);
+const Avatar: React.FC<AvatarProps> = ({ uri, initials, size = 40 }) => {
+  const avatarStyle = { 
+    width: size, 
+    height: size, 
+    borderRadius: size / 2 
+  };
+
+  return (
+    <View style={[styles.container, avatarStyle]}> 
+      {uri ? (
+        <Image source={{ uri }} style={avatarStyle} />
+      ) : (
+        <Text style={styles.initials}>{initials || '?'}</Text>
+      )}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

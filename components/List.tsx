@@ -1,21 +1,10 @@
 /*
 List Component
 --------------
-Renders a list of items using FlatList, with an empty state message.
+A FlatList wrapper with empty state handling for displaying lists of items.
 
-Usage:
-import List from './components/List';
-
-<List
-  data={myDataArray}
-  renderItem={({ item }) => <Text>{item.name}</Text>}
-  keyExtractor={(item) => item.id}
-/>
-
-Props:
-- data: T[] // Array of items to display
-- renderItem: ListRenderItem<T> // Function to render each item
-- keyExtractor?: (item: T, index: number) => string // Unique key for each item (optional)
+Copy this file to your project's components folder and import it where needed.
+Perfect for any list display needs with built-in empty state messaging.
 */
 
 import React from 'react';

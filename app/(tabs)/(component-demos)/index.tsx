@@ -29,6 +29,8 @@ const demos = [
   { name: 'StyledText', route: '/(component-demos)/styledtext-demo' },
   { name: 'Switch', route: '/(component-demos)/switch-demo' },
   { name: 'Themed', route: '/(component-demos)/themed-demo' },
+  { name: 'ThemedText', route: '/(component-demos)/themedtext-demo' },
+  { name: 'ThemedView', route: '/(component-demos)/themedview-demo' },
 ];
 
 export default function ComponentDemosIndex() {

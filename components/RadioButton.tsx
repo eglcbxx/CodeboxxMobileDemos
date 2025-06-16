@@ -1,16 +1,10 @@
 /*
 RadioButton Component
 ---------------------
-A single radio button for selecting one option.
+A single radio button component for selecting one option from a group.
 
-Usage:
-import RadioButton from './components/RadioButton';
-
-<RadioButton selected={true} onPress={() => setSelected(true)} />
-
-Props:
-- selected: boolean // Whether selected
-- onPress: () => void // Callback when pressed
+Copy this file to your project's components folder and import it where needed.
+Perfect for option selection, settings, and any single-choice interfaces.
 */
 
 import React from 'react';

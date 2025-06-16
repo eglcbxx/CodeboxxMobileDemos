@@ -1,18 +1,10 @@
 /*
 Icon Component
 --------------
-Displays a simple icon placeholder with a name.
+A simple icon component that displays text-based icon placeholders.
 
-Usage:
-import Icon from './components/Icon';
-
-<Icon name="star" />
-<Icon name="user" size={32} color="#007bff" />
-
-Props:
-- name: string // Icon name (required)
-- size?: number // Icon size (default: 24)
-- color?: string // Icon color (default: #000)
+Copy this file to your project's components folder and import it where needed.
+This is a basic implementation - for production apps, consider using actual icon libraries like react-native-vector-icons.
 */
 
 import React from 'react';
@@ -24,8 +16,12 @@ interface IconProps {
   color?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ name, size, color }) => {
-  return <Text style={{ fontSize: size || 24, color: color || '#000' }}>Icon: {name}</Text>;
+const Icon: React.FC<IconProps> = ({ name, size = 24, color = '#000' }) => {
+  return (
+    <Text style={{ fontSize: size, color }}>
+      📍 {name}
+    </Text>
+  );
 };
 
 export default Icon;

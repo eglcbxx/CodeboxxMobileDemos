@@ -1,24 +1,12 @@
 /*
 AlertBox Demo
 -------------
-This demo shows how to use the AlertBox component for displaying different types of alerts.
+Demonstrates the AlertBox component showing different alert types and dismiss functionality.
 
-Usage Steps:
-1. Import the AlertBox component:
-   import AlertBox from '@/components/AlertBox';
-
-2. Use the component in your JSX:
-   <AlertBox message="This is an info alert!" type="info" />
-   <AlertBox message="Success!" type="success" />
-   <AlertBox message="Error!" type="error" />
-   <AlertBox message="Warning!" type="warning" onClose={() => {}} />
-
-Props:
-- message: string (required) – The alert message to display.
-- type?: 'success' | 'error' | 'info' | 'warning' (optional, default: 'info') – The type of alert.
-- onClose?: () => void (optional) – Callback when the alert is dismissed.
-
-To use AlertBox in another component, import it and provide the required props as shown above.
+Copy-paste instructions:
+1. Copy the AlertBox.tsx file to your components folder
+2. Import: import AlertBox from './components/AlertBox';
+3. Use as shown below with message, type, and optional onClose props
 */
 
 import AlertBox from '@/components/AlertBox';
@@ -26,11 +14,11 @@ import { ScrollView } from 'react-native';
 
 export default function AlertBoxDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
+    <ScrollView contentContainerStyle={{ padding: 16, gap: 12 }}>
       <AlertBox message="This is an info alert!" type="info" />
-      <AlertBox message="Success!" type="success" />
-      <AlertBox message="Error!" type="error" />
-      <AlertBox message="Warning!" type="warning" onClose={() => {}} />
+      <AlertBox message="Success message!" type="success" />
+      <AlertBox message="Error occurred!" type="error" />
+      <AlertBox message="Warning alert with dismiss" type="warning" onClose={() => alert('Alert dismissed')} />
     </ScrollView>
   );
 }

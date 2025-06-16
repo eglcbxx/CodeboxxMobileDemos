@@ -1,20 +1,10 @@
 /*
 Collapsible Component
---------------------
-A section that can be expanded or collapsed to show/hide its children.
+---------------------
+An expandable/collapsible section component with animated toggle functionality.
 
-Usage:
-1. Import the component:
-   import { Collapsible } from './components/Collapsible';
-
-2. Use in your JSX:
-   <Collapsible title="Section Title">
-     <Text>Content goes here</Text>
-   </Collapsible>
-
-Props:
-- title: string // The title of the collapsible section
-- children: ReactNode // Content to show/hide
+Copy this file to your project's components folder and import it where needed.
+Perfect for FAQ sections, settings panels, and any content that needs show/hide functionality.
 */
 
 import { PropsWithChildren, useState } from 'react';

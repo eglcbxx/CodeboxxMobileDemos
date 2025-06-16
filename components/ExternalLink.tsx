@@ -1,18 +1,10 @@
 /*
 ExternalLink Component
----------------------
-A link that opens URLs in an in-app browser on native, or a new tab on web.
+----------------------
+A link component that opens URLs in an in-app browser on native devices and new tabs on web.
 
-Usage:
-1. Import the component:
-   import { ExternalLink } from './components/ExternalLink';
-
-2. Use in your JSX:
-   <ExternalLink href="https://example.com">Open Example</ExternalLink>
-
-Props:
-- href: string // The URL to open
-- All other Link props from expo-router are supported
+Copy this file to your project's components folder and import it where needed.
+Perfect for linking to external websites while maintaining a good user experience across platforms.
 */
 
 import { Href, Link } from 'expo-router';

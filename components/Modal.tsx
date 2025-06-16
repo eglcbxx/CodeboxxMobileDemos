@@ -1,22 +1,21 @@
 /*
-ReusableModal Usage Guide
-------------------------
-1. Import the modal component:
-   import Modal from './components/Modal';
+Modal Compointerface ReusableModalProps {
+  visible: boolean;
+  onClose: () => void;
+  title?: string;
+  children: React.ReactNode;
+}
 
-2. In your component, define a state to control modal visibility:
-   const [modalVisible, setModalVisible] = useState(false);
+const ReusableModal: React.FC<ReusableModalProps> = ({ 
+  visible, 
+  onClose, 
+  title = 'Modal', 
+  children 
+}) => {------------
+A reusable modal component with overlay and customizable content.
 
-3. Render the modal and pass required props:
-   - visible: Boolean state to control modal visibility
-   - onClose: Function to close the modal (e.g., setModalVisible(false))
-   - title: (Optional) Title for the modal
-   - children: Modal content
-
-   Example:
-   Place <ReusableModal visible={modalVisible} onClose={() => setModalVisible(false)} title="Your Modal Title">Your content here</Modal> in your render.
-
-4. To open the modal, set modalVisible to true (e.g., on button press).
+Copy this file to your project's components folder and import it where needed.
+Perfect for dialogs, confirmations, forms, and any overlay content that needs to appear above the main interface.
 */
 
 import { Text, View } from '@/components/Themed';

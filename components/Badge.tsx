@@ -1,18 +1,10 @@
 /*
 Badge Component
 ---------------
-Displays a small label for status or notifications.
+A small notification or status label component with customizable colors.
 
-Usage:
-import Badge from './components/Badge';
-
-<Badge label="New" />
-<Badge label="Active" backgroundColor="#28a745" color="#fff" />
-
-Props:
-- label: string // Text to display
-- color?: string // Text color (default: #fff)
-- backgroundColor?: string // Badge background (default: #007bff)
+Copy this file to your project's components folder and import it where needed.
+Perfect for status indicators, notifications counts, and category labels.
 */
 
 

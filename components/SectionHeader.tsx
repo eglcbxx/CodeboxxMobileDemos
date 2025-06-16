@@ -1,22 +1,10 @@
 /*
 SectionHeader Component
-----------------------
-Displays a section title with an optional accessory (e.g., button or icon).
+-----------------------
+A header component for sections with optional accessory elements like buttons or icons.
 
-Usage:
-import { SectionHeader } from './components/SectionHeader';
-
-<SectionHeader title="Section Title" />
-<SectionHeader title="With Button" accessory={<Button title="Edit" onPress={...} />} />
-<SectionHeader title="Custom Style" titleStyle={{ color: 'blue' }} />
-
-Props:
-- title: string // Section title text
-- titleType?: string // ThemedText type for title (default: 'title')
-- titleStyle?: object // Style for the title
-- accessory?: ReactNode // Optional accessory (e.g., button, icon)
-- style?: object // Container style
-- ...ThemedViewProps // Any other ThemedView props
+Copy this file to your project's components folder and import it where needed.
+Perfect for organizing content into sections with clear headers and optional actions.
 */
 
 import { ThemedText, ThemedTextProps } from '@/components/ThemedText';

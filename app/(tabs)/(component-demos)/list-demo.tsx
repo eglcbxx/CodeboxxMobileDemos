@@ -1,43 +1,81 @@
 /*
 List Demo
 ---------
-This demo shows how to use the List component to render a list of items with an empty state message.
-
-Usage Steps:
-1. Import the List component:
-   import List from '@/components/List';
-
-2. Prepare your data array and renderItem function:
-   const items = ['Item 1', 'Item 2', ...];
-   function renderItem({ item }) {
-     return <StyledText>{item}</StyledText>;
-   }
-
-3. Use the component in your JSX:
-   <List data={items} renderItem={renderItem} />
-
-Props:
-- data: T[] (required) – Array of items to display.
-- renderItem: ListRenderItem<T> (required) – Function to render each item.
-- keyExtractor?: (item: T, index: number) => string – Unique key for each item (optional).
-
-To use List in another component, import it and provide the required data and renderItem props, and optionally keyExtractor.
+Copy the List component to render data arrays with customizable item rendering and empty states.
+Perfect for displaying collections with proper fallback messaging when no data is available.
 */
 
-import List from '@/components/List';
-import StyledText from '@/components/StyledText';
-import { ListRenderItemInfo, View } from 'react-native';
+import { View } from 'react-native';
+import List from '../../../components/List';
+import StyledText from '../../../components/StyledText';
+import { ThemedText } from '../../../components/ThemedText';
 
 export default function ListDemo() {
-  const items = ['Item 1'].concat(Array.from({ length: 20 }, (_, i) => `Item ${i + 1}`));
+  const items = ['React Native', 'TypeScript', 'Expo', 'JavaScript', 'CSS'];
+  const emptyArray: string[] = [];
+
+  const moreItems = [
+    { id: 1, name: 'Product A', category: 'Electronics' },
+    { id: 2, name: 'Product B', category: 'Books' },
+    { id: 3, name: 'Product C', category: 'Clothing' },
+    { id: 4, name: 'Product D', category: 'Home' },
+    { id: 5, name: 'Product E', category: 'Sports' },
+  ];
 
   return (
-    <View style={{ flex: 1, padding: 16, gap: 16, marginVertical: 16 }}>
+    <View style={{ flex: 1, padding: 16 }}>
+      <ThemedText style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 16 }}>
+        List Component Demo
+      </ThemedText>
+
+      <ThemedText style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 8 }}>
+        Simple String List:
+      </ThemedText>
       <List
         data={items}
-        renderItem={function ({ item }: ListRenderItemInfo<string>): React.ReactElement | null {
-          return <StyledText>{item}</StyledText>;
-        }}
+        renderItem={({ item }) => (
+          <View style={{ 
+            padding: 12, 
+            marginBottom: 8, 
+            backgroundColor: '#f5f5f5', 
+            borderRadius: 8 
+          }}>
+            <StyledText>{item}</StyledText>
+          </View>
+        )}
+      />
+
+      <ThemedText style={{ fontSize: 16, fontWeight: 'bold', marginTop: 24, marginBottom: 8 }}>
+        Empty List (shows empty state):
+      </ThemedText>
+      <List
+        data={emptyArray}
+        renderItem={({ item }) => <StyledText>{item}</StyledText>}
+      />
+
+      <ThemedText style={{ fontSize: 16, fontWeight: 'bold', marginTop: 24, marginBottom: 8 }}>
+        Object List with Custom Rendering:
+      </ThemedText>
+      <List
+        data={moreItems}
+        renderItem={({ item }) => (
+          <View style={{ 
+            padding: 16, 
+            marginBottom: 8, 
+            backgroundColor: '#e8f4fd', 
+            borderRadius: 8,
+            borderLeftWidth: 4,
+            borderLeftColor: '#007AFF'
+          }}>
+            <StyledText style={{ fontWeight: 'bold', fontSize: 16 }}>
+              {item.name}
+            </StyledText>
+            <StyledText style={{ color: '#666', marginTop: 4 }}>
+              Category: {item.category}
+            </StyledText>
+          </View>
+        )}
+        keyExtractor={(item) => item.id.toString()}
       />
     </View>
   );

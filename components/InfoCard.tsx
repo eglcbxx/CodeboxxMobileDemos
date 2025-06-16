@@ -1,23 +1,10 @@
 /*
 InfoCard Component
------------------
-Displays a card with an optional title and content.
+------------------
+A card container with optional title and customizable background for displaying content.
 
-Usage:
-import InfoCard from './components/InfoCard';
-
-<InfoCard title="Card Title">
-  <Text>Some content goes here.</Text>
-</InfoCard>
-
-<InfoCard backgroundColor="#e0f7fa">
-  <Text>Custom background color!</Text>
-</InfoCard>
-
-Props:
-- title?: string // Optional card title
-- children: ReactNode // Content inside the card
-- backgroundColor?: string // Card background color (default: #f0f0f0)
+Copy this file to your project's components folder and import it where needed.
+Perfect for displaying information blocks, feature highlights, and content sections.
 */
 
 import React, { ReactNode } from 'react';
@@ -29,9 +16,9 @@ interface InfoCardProps {
   backgroundColor?: string;
 }
 
-const InfoCard: React.FC<InfoCardProps> = ({ title, children, backgroundColor }) => {
+const InfoCard: React.FC<InfoCardProps> = ({ title, children, backgroundColor = '#f0f0f0' }) => {
   return (
-    <View style={[styles.card, { backgroundColor: backgroundColor || '#f0f0f0' }]}>
+    <View style={[styles.card, { backgroundColor }]}>
       {title && <Text style={styles.title}>{title}</Text>}
       <View style={styles.content}>{children}</View>
     </View>

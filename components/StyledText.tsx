@@ -1,20 +1,10 @@
 /*
 StyledText Component
--------------------
-Displays styled text as a heading, paragraph, or caption.
+--------------------
+A text component with predefined typography styles for consistent text hierarchy.
 
-Usage:
-import StyledText from './components/StyledText';
-
-<StyledText type="heading1">Heading Example</StyledText>
-<StyledText type="paragraph">This is a paragraph.</StyledText>
-<StyledText type="caption" color="#888">Small caption text.</StyledText>
-
-Props:
-- children: ReactNode // Text content
-- type?: 'heading1' | 'paragraph' | 'caption' // Text style (default: 'paragraph')
-- color?: string // Text color (default: #333)
-- style?: object // Additional style
+Copy this file to your project's components folder and import it where needed.
+Perfect for maintaining consistent typography throughout your app with heading and body styles.
 */
 
 import React, { ReactNode } from 'react';
@@ -29,7 +19,12 @@ interface StyledTextProps {
   style?: StyleProp<TextStyle>;
 }
 
-const StyledText: React.FC<StyledTextProps> = ({ children, type, color, style }) => {
+const StyledText: React.FC<StyledTextProps> = ({ 
+  children, 
+  type = 'paragraph', 
+  color = '#333', 
+  style 
+}) => {
   const getTextStyle = () => {
     switch (type) {
       case 'heading1':
@@ -45,7 +40,11 @@ const StyledText: React.FC<StyledTextProps> = ({ children, type, color, style })
     }
   };
 
-  return <Text style={[getTextStyle(), { color: color || '#333' }, style]}>{children}</Text>;
+  return (
+    <Text style={[getTextStyle(), { color }, style]}>
+      {children}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({

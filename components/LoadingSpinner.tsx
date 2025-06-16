@@ -1,17 +1,10 @@
 /*
 LoadingSpinner Component
------------------------
-Shows a loading indicator (spinner).
+------------------------
+A clean loading indicator component using React Native's ActivityIndicator.
 
-Usage:
-import LoadingSpinner from './components/LoadingSpinner';
-
-<LoadingSpinner />
-<LoadingSpinner size="small" color="#333" />
-
-Props:
-- size?: 'small' | 'large' // Spinner size (default: 'large')
-- color?: string // Spinner color (default: #007bff)
+Copy this file to your project's components folder and import it where needed.
+Perfect for showing loading states during API calls, navigation, and async operations.
 */
 
 import React from 'react';

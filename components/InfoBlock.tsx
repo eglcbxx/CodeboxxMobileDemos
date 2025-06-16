@@ -1,31 +1,10 @@
 /*
 InfoBlock Component
-------------------
-Displays a block with an optional title and content, using themed styles.
+-------------------
+A themed container component for displaying titled content blocks with consistent styling.
 
-Usage:
-import { InfoBlock } from './components/InfoBlock';
-
-<InfoBlock title="Section Title">
-  <Text>Some content goes here.</Text>
-</InfoBlock>
-
-<InfoBlock
-  title="Custom Title"
-  titleType="title"
-  titleStyle={{ color: 'blue' }}
-  style={{ margin: 16 }}
->
-  <Text>More details here.</Text>
-</InfoBlock>
-
-Props:
-- title?: string // Optional block title
-- titleType?: string // ThemedText type for title (default: 'subtitle')
-- titleStyle?: object // Style for the title
-- children: ReactNode // Content inside the block
-- style?: object // Container style
-- ...ThemedViewProps // Any other ThemedView props
+Copy this file to your project's components folder and import it where needed.
+Perfect for organizing content into well-structured, themed sections throughout your app.
 */
 
 import { ThemedText, ThemedTextProps } from '@/components/ThemedText';

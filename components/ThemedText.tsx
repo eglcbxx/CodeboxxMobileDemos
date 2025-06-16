@@ -1,3 +1,12 @@
+/*
+ThemedText Component
+-------------
+A text component that automatically adapts to light/dark themes with predefined typography styles.
+
+Copy this file to your project's components folder and ensure you have the useThemeColor hook.
+Supports different text types (title, subtitle, link) and custom light/dark colors.
+*/
+
 import { StyleSheet, Text, type TextProps } from 'react-native';
 
 import { useThemeColor } from '@/hooks/useThemeColor';

@@ -1,22 +1,13 @@
 /*
 Icon Demo
 ---------
-This demo shows how to use the Icon component to display simple icons by name.
+Demonstrates the Icon component displaying simple text-based icon placeholders.
 
-Usage Steps:
-1. Import the Icon component:
-   import Icon from '@/components/Icon';
-
-2. Use the component in your JSX:
-   <Icon name="star" size={32} color="#FFD700" />
-   <Icon name="heart" size={32} color="#FF0000" />
-
-Props:
-- name: string (required) – The icon name to display.
-- size?: number (default: 24) – The icon size in pixels.
-- color?: string (default: #000) – The icon color.
-
-To use Icon in another component, import it and provide the required name, and optionally size and color.
+Copy-paste instructions:
+1. Copy the Icon.tsx file to your components folder
+2. Import: import Icon from './components/Icon';
+3. Use with name prop and optional size/color customization
+Note: This is a basic demo - consider using proper icon libraries for production apps.
 */
 
 import Icon from '@/components/Icon';
@@ -25,9 +16,13 @@ import { ScrollView, View } from 'react-native';
 export default function IconDemo() {
   return (
     <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 16, marginVertical: 16 }}>
-        <Icon name="star" size={32} color="#FFD700" />
-        <Icon name="heart" size={32} color="#FF0000" />
+      <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 16, marginVertical: 16 }}>
+        <Icon name="home" />
+        <Icon name="user" size={32} color="#007bff" />
+        <Icon name="settings" size={28} color="#28a745" />
+        <Icon name="star" size={36} color="#ffc107" />
+        <Icon name="heart" size={32} color="#dc3545" />
+        <Icon name="search" size={24} color="#6c757d" />
       </View>
     </ScrollView>
   );

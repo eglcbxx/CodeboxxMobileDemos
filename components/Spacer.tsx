@@ -1,17 +1,10 @@
 /*
 Spacer Component
 ----------------
-Adds vertical or horizontal space between elements.
+A simple spacing component for adding consistent gaps between UI elements.
 
-Usage:
-import Spacer from './components/Spacer';
-
-<Spacer height={16} />
-<Spacer width={24} />
-
-Props:
-- height?: number // Height in pixels (default: 8)
-- width?: number // Width in pixels (default: 0)
+Copy this file to your project's components folder and import it where needed.
+Perfect for creating consistent spacing in layouts without custom margin/padding styles.
 */
 
 import React from 'react';

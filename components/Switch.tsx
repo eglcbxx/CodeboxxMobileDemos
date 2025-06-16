@@ -1,16 +1,10 @@
 /*
 Switch Component
 ----------------
-A toggle switch for on/off settings.
+A toggle switch component for on/off settings and boolean inputs.
 
-Usage:
-import Switch from './components/Switch';
-
-<Switch value={true} onValueChange={setValue} />
-
-Props:
-- value: boolean // Current value
-- onValueChange: (value: boolean) => void // Callback when toggled
+Copy this file to your project's components folder and import it where needed.
+Perfect for settings screens, preferences, and any boolean toggle functionality.
 */
 
 import React from 'react';

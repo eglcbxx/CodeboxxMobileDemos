@@ -1,4 +1,3 @@
-import { HeaderHeightContext } from '@react-navigation/elements';
 import { Stack } from 'expo-router';
 
 const demoScreens = [
@@ -27,6 +26,8 @@ const demoScreens = [
   { name: 'styledtext-demo', title: 'Styled Text' },
   { name: 'switch-demo', title: 'Switch' },
   { name: 'themed-demo', title: 'Themed' },
+  { name: 'themedtext-demo', title: 'ThemedText' },
+  { name: 'themedview-demo', title: 'ThemedView' },
 ];
 
 export default function ComponentDemosLayout() {

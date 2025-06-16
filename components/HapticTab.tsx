@@ -1,21 +1,10 @@
 /*
 HapticTab Component
 -------------------
-A custom tab bar button that provides haptic feedback on iOS when pressed.
+A tab bar button component that provides haptic feedback on iOS when pressed.
 
-Usage:
-1. Import the component:
-   import { HapticTab } from './components/HapticTab';
-
-2. Use as the tabBarButton in your navigator:
-   <Tab.Screen
-     name="Home"
-     component={HomeScreen}
-     options={{ tabBarButton: (props) => <HapticTab {...props} /> }}
-   />
-
-Props:
-- All BottomTabBarButtonProps from @react-navigation/bottom-tabs
+Copy this file to your project's components folder and import it where needed.
+Perfect for enhancing tab navigation with tactile feedback on iOS devices.
 */
 
 import { BottomTabBarButtonProps } from '@react-navigation/bottom-tabs';
