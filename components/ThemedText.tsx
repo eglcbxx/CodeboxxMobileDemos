@@ -15,6 +15,7 @@ export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
   type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  forceTheme?: 'light' | 'dark'; // Manual theme override
 };
 
 export function ThemedText({
@@ -22,9 +23,14 @@ export function ThemedText({
   lightColor,
   darkColor,
   type = 'default',
+  forceTheme,
   ...rest
 }: ThemedTextProps) {
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
+  // Use forceTheme if provided, otherwise use auto theme
+  const color = useThemeColor({ 
+    light: lightColor || '#000', // Default to black for light
+    dark: darkColor || '#fff'    // Default to white for dark
+  }, 'text', forceTheme);
 
   return (
     <Text
@@ -46,6 +52,7 @@ const styles = StyleSheet.create({
   default: {
     fontSize: 16,
     lineHeight: 24,
+    color: "#000"
   },
   defaultSemiBold: {
     fontSize: 16,

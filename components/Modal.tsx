@@ -1,17 +1,6 @@
 /*
-Modal Compointerface ReusableModalProps {
-  visible: boolean;
-  onClose: () => void;
-  title?: string;
-  children: React.ReactNode;
-}
-
-const ReusableModal: React.FC<ReusableModalProps> = ({ 
-  visible, 
-  onClose, 
-  title = 'Modal', 
-  children 
-}) => {------------
+Modal Component
+---------------
 A reusable modal component with overlay and customizable content.
 
 Copy this file to your project's components folder and import it where needed.
@@ -21,18 +10,18 @@ Perfect for dialogs, confirmations, forms, and any overlay content that needs to
 import { Text, View } from '@/components/Themed';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Modal, Platform, StyleSheet, TouchableOpacity } from 'react-native';
+import { Platform, Modal as RNModal, StyleSheet, TouchableOpacity } from 'react-native';
 
-interface ReusableModalProps {
+interface ModalProps {
   visible: boolean;
   onClose: () => void;
   title?: string;
   children?: React.ReactNode;
 }
 
-const ReusableModal: React.FC<ReusableModalProps> = ({ visible, onClose, title = 'Modal', children }) => {
+const Modal: React.FC<ModalProps> = ({ visible, onClose, title = 'Modal', children }) => {
   return (
-    <Modal
+    <RNModal
       animationType="slide"
       transparent={true}
       visible={visible}
@@ -49,7 +38,7 @@ const ReusableModal: React.FC<ReusableModalProps> = ({ visible, onClose, title =
           <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
         </View>
       </View>
-    </Modal>
+    </RNModal>
   );
 };
 
@@ -95,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ReusableModal;
+export default Modal;

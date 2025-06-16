@@ -8,9 +8,11 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 
 export function useThemeColor(
   props: { light?: string; dark?: string },
-  colorName: keyof typeof Colors.light & keyof typeof Colors.dark
+  colorName: keyof typeof Colors.light & keyof typeof Colors.dark,
+  forceTheme?: 'light' | 'dark'
 ) {
-  const theme = useColorScheme() ?? 'light';
+  const systemTheme = useColorScheme() ?? 'light';
+  const theme = forceTheme || systemTheme; // Use forced theme or fall back to system
   const colorFromProps = props[theme];
 
   if (colorFromProps) {

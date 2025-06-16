@@ -105,7 +105,7 @@ This project is a library of ready-to-use UI components and programming concepts
 2. Copy the file(s) you want (right-click and select Copy).
 3. In your own project, go to (or create) a `components/` folder and paste (right-click and select Paste).
 4. In the demo app, find the related screen (for example, `CustomButton Demo`).
-5. In `app/(tabs)/(component-demos)/`, open the matching file (for example, `custombutton-demo.tsx`).
+5. In `app/(tabs)/component-demos/`, open the matching file (for example, `custombutton-demo.tsx`).
 6. Copy the example code you need and paste it into your own screen file.
 7. Import the component in your code (adjust the path as needed):
 
@@ -123,7 +123,7 @@ This project is a library of ready-to-use UI components and programming concepts
 2. Copy the file(s) you want (right-click and select Copy).
 3. In your own project, create a `concepts/` folder if it does not exist, and paste the files (right-click and select Paste).
 4. In the demo app, find the related screen (for example, `Loops Demo`).
-5. In `app/(tabs)/(concept-demos)/`, open the matching file.
+5. In `app/(tabs)/concept-demos/`, open the matching file.
 6. Copy the example code you need and paste it into your own screen file.
 7. Import the concept file in your code (adjust the path as needed).
 
@@ -141,8 +141,8 @@ Your Main Project
 ├── CodeboxxMobileDemos/
 │   ├── app/
 │   │   └── (tabs)/
-│   │       ├── (component-demos)/   ← Demo screens for each component
-│   │       └── (concept-demos)/     ← Demo screens for each concept
+│   │       ├── component-demos/   ← Demo screens for each component
+│   │       └── concept-demos/     ← Demo screens for each concept
 │   ├── components/                  ← Ready-to-use UI components
 │   ├── concepts/                    ← Programming concept examples
 │   ...

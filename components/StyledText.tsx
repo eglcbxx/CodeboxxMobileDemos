@@ -7,6 +7,7 @@ Copy this file to your project's components folder and import it where needed.
 Perfect for maintaining consistent typography throughout your app with heading and body styles.
 */
 
+import { useThemeColor } from '@/hooks/useThemeColor';
 import React, { ReactNode } from 'react';
 import { StyleProp, StyleSheet, Text, TextStyle } from 'react-native';
 
@@ -22,9 +23,11 @@ interface StyledTextProps {
 const StyledText: React.FC<StyledTextProps> = ({ 
   children, 
   type = 'paragraph', 
-  color = '#333', 
+  color, 
   style 
 }) => {
+  const themeTextColor = useThemeColor({}, 'text');
+  const textColor = color || themeTextColor;
   const getTextStyle = () => {
     switch (type) {
       case 'heading1':
@@ -41,7 +44,7 @@ const StyledText: React.FC<StyledTextProps> = ({
   };
 
   return (
-    <Text style={[getTextStyle(), { color }, style]}>
+    <Text style={[getTextStyle(), { color: textColor }, style]}>
       {children}
     </Text>
   );

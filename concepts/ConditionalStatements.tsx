@@ -13,7 +13,7 @@ import { Text, View } from 'react-native';
 const ConditionalStatements = () => {
   const score = 85;
   const weather = 'sunny';
-  const userRole: 'admin' | 'user' | 'guest' | 'none' = 'admin';
+  const userRole: 'admin' | 'user' | 'guest' | 'none' = 'admin' as 'admin' | 'user' | 'guest' | 'none';
 
   // If/else conditional
   let grade = '';

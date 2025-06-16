@@ -14,9 +14,11 @@ interface ListProps<T> {
   data: T[];
   renderItem: ListRenderItem<T>;
   keyExtractor?: (item: T, index: number) => string;
+  contentContainerStyle?: any;
+  style?: any;
 }
 
-const List = <T extends unknown>({ data, renderItem, keyExtractor }: ListProps<T>) => {
+const List = <T extends unknown>({ data, renderItem, keyExtractor, contentContainerStyle, style }: ListProps<T>) => {
   if (!data || data.length === 0) {
     return (
       <View style={styles.emptyContainer}>
@@ -30,7 +32,10 @@ const List = <T extends unknown>({ data, renderItem, keyExtractor }: ListProps<T
       data={data}
       renderItem={renderItem}
       keyExtractor={keyExtractor || ((item, index) => index.toString())}
-      style={styles.list}
+      style={[styles.list, style]}
+      contentContainerStyle={contentContainerStyle}
+      showsVerticalScrollIndicator={false}
+      nestedScrollEnabled={true}
     />
   );
 };
