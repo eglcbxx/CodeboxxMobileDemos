@@ -1,31 +1,57 @@
 /*
 Fetch Example Demo
 ------------------
-This demo shows how to use the FetchExample concept component to illustrate making HTTP requests with fetch in JavaScript/TypeScript.
+Copy-paste example showing HTTP requests, loading states, and error handling.
 
-Usage Steps:
-1. Import the FetchExample concept component:
-   import FetchExample from '@/concepts/FetchExample';
+1. Copy the entire FetchExample.tsx file to your concepts folder
+2. Import: import FetchExample from '../../../concepts/FetchExample';
+3. Use: <FetchExample />
 
-2. Use the component in your JSX:
-   <FetchExample />
-
-Details:
-- This component demonstrates how to perform GET/POST requests and handle responses/errors using fetch.
-- It is intended for educational purposes and can be used in any screen or demo to show API calls.
-
-To use FetchExample in another component, import it and render it directly.
+Shows real API calls, mock data, loading states, and error management.
 */
 
-import FetchExample from '@/concepts/FetchExample';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import FetchExample from '../../../concepts/FetchExample';
 
 export default function FetchExampleDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Fetch Example Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Fetch Example Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of HTTP requests and data fetching.
+          Demonstrates API calls, loading states, and error handling patterns.
+        </ThemedText>
+      </View>
+
       <FetchExample />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

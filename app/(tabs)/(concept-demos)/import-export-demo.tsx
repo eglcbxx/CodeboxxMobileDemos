@@ -1,31 +1,57 @@
 /*
-Import/Export Demo
+Import Export Demo
 ------------------
-This demo shows how to use the ImportExport concept component to illustrate module import and export syntax in JavaScript/TypeScript.
+Copy-paste example showing ES6 module system implementation.
 
-Usage Steps:
-1. Import the ImportExport concept component:
-   import ImportExport from '@/concepts/ImportExport';
+1. Copy the entire ImportExport.tsx file to your concepts folder
+2. Import: import ImportExport from '../../../concepts/ImportExport';
+3. Use: <ImportExport />
 
-2. Use the component in your JSX:
-   <ImportExport />
-
-Details:
-- This component demonstrates how to import and export functions, classes, and variables between modules.
-- It is intended for educational purposes and can be used in any screen or demo to show module organization.
-
-To use ImportExport in another component, import it and render it directly.
+Shows default exports, named exports, interfaces, classes, and import patterns.
 */
 
-import ImportExport from '@/concepts/ImportExport';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import ImportExport from '../../../concepts/ImportExport';
 
 export default function ImportExportDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Import/Export Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Import Export Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of ES6 module import/export patterns.
+          Demonstrates module organization, named exports, and code structure.
+        </ThemedText>
+      </View>
+
       <ImportExport />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

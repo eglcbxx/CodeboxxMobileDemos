@@ -1,31 +1,45 @@
 /*
 Functions and Methods
---------------------
-This component demonstrates how to define and use functions and methods in JavaScript/TypeScript.
+---------------------
+Demonstrates function declarations, arrow functions, and method definitions in TypeScript.
 
-How to use:
-1. Define a function using function keyword or arrow syntax.
-2. Call the function with arguments.
-3. Use the return value in your code.
-
-Example:
-function greet(name: string) { return `Hello, ${name}!`; }
-const message = greet('World');
+Copy this file to your project's concepts folder and import it where needed.
+Perfect for understanding function syntax, parameters, return values, and method usage.
 */
 
 import React from 'react';
 import { Text, View } from 'react-native';
 
-function greet(name: string) {
+// Regular function declaration
+function greet(name: string): string {
   return `Hello, ${name}!`;
 }
 
+// Arrow function
+const multiply = (a: number, b: number): number => a * b;
+
+// Function with optional parameter
+const formatName = (first: string, last?: string): string => {
+  return last ? `${first} ${last}` : first;
+};
+
 const FunctionsAndMethods = () => {
-  // Functions and methods
-  const message = greet('World');
+  // Object with methods
+  const calculator = {
+    add: (x: number, y: number): number => x + y,
+    subtract: (x: number, y: number): number => x - y
+  };
+
   return (
-    <View>
-      <Text>Function result: {message}</Text>
+    <View style={{ padding: 16, backgroundColor: '#f5f5f5', borderRadius: 8 }}>
+      <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 8 }}>
+        Functions and Methods Examples
+      </Text>
+      <Text>Regular function: {greet('TypeScript')}</Text>
+      <Text>Arrow function: {multiply(6, 7)}</Text>
+      <Text>Optional parameter: {formatName('John', 'Doe')}</Text>
+      <Text>Method call: {calculator.add(10, 5)}</Text>
+      <Text>Another method: {calculator.subtract(20, 8)}</Text>
     </View>
   );
 };

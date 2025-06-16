@@ -1,44 +1,60 @@
 /*
 Conditional Statements
----------------------
-This component demonstrates conditional statements (if/else, switch) in JavaScript/TypeScript.
+----------------------
+Demonstrates if/else statements, ternary operators, and switch cases in TypeScript.
 
-How to use:
-1. Use if/else to execute code based on a condition.
-2. Use else if for multiple conditions.
-3. Use switch for multi-branch selection based on a value.
-
-Example:
-if (value > 5) { ... } else if (value === 5) { ... } else { ... }
-switch (value) { case 10: ... break; default: ... }
+Copy this file to your project's concepts folder and import it where needed.
+Perfect for understanding conditional logic and control flow patterns.
 */
 
 import React from 'react';
 import { Text, View } from 'react-native';
 
 const ConditionalStatements = () => {
-  // Conditional statements
-  const value: number = 10;
-  let result = '';
-  if (value > 5) {
-    result = 'Greater than 5';
-  } else if (value === 5) {
-    result = 'Equal to 5';
+  const score = 85;
+  const weather = 'sunny';
+  const userRole: 'admin' | 'user' | 'guest' | 'none' = 'admin';
+
+  // If/else conditional
+  let grade = '';
+  if (score >= 90) {
+    grade = 'A';
+  } else if (score >= 80) {
+    grade = 'B';
+  } else if (score >= 70) {
+    grade = 'C';
   } else {
-    result = 'Less than 5';
+    grade = 'F';
   }
-  let switchResult = '';
-  switch (value) {
-    case 10:
-      switchResult = 'Value is 10';
+
+  // Ternary operator
+  const weatherMessage = weather === 'sunny' ? 'Perfect day!' : 'Stay inside';
+
+  // Switch statement
+  let permissions = '';
+  switch (userRole) {
+    case 'admin':
+      permissions = 'Full access';
+      break;
+    case 'user':
+      permissions = 'Limited access';
+      break;
+    case 'guest':
+      permissions = 'Read-only access';
       break;
     default:
-      switchResult = 'Value is not 10';
+      permissions = 'No access';
   }
+
   return (
-    <View>
-      <Text>If/Else: {result}</Text>
-      <Text>Switch: {switchResult}</Text>
+    <View style={{ padding: 16, backgroundColor: '#f5f5f5', borderRadius: 8 }}>
+      <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 8 }}>
+        Conditional Statements Examples
+      </Text>
+      <Text>Score: {score} → Grade: {grade}</Text>
+      <Text>Weather: {weather} → {weatherMessage}</Text>
+      <Text>Role: {userRole} → {permissions}</Text>
+      <Text>Even/Odd: {score % 2 === 0 ? 'Even' : 'Odd'}</Text>
     </View>
   );
 };

@@ -1,31 +1,57 @@
 /*
 Operators Demo
 --------------
-This demo shows how to use the Operators concept component to illustrate arithmetic, logical, comparison, and other operators in JavaScript/TypeScript.
+Copy-paste example showing arithmetic, logical, comparison, and assignment operators.
 
-Usage Steps:
-1. Import the Operators concept component:
-   import Operators from '@/concepts/Operators';
+1. Copy the entire Operators.tsx file to your concepts folder
+2. Import: import Operators from '../../../concepts/Operators';
+3. Use: <Operators />
 
-2. Use the component in your JSX:
-   <Operators />
-
-Details:
-- This component demonstrates different operator types and their usage in expressions.
-- It is intended for educational purposes and can be used in any screen or demo to show operator behavior.
-
-To use Operators in another component, import it and render it directly.
+Shows all JavaScript/TypeScript operator types with practical examples.
 */
 
-import Operators from '@/concepts/Operators';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import Operators from '../../../concepts/Operators';
 
 export default function OperatorsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Operators Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Operators Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of JavaScript/TypeScript operators.
+          Demonstrates arithmetic, logical, comparison, and advanced operator patterns.
+        </ThemedText>
+      </View>
+
       <Operators />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

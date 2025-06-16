@@ -1,31 +1,57 @@
 /*
 Function Calls Demo
 -------------------
-This demo shows how to use the FunctionCalls concept component to illustrate calling functions in JavaScript/TypeScript.
+Copy-paste example showing function invocation patterns and argument handling.
 
-Usage Steps:
-1. Import the FunctionCalls concept component:
-   import FunctionCalls from '@/concepts/FunctionCalls';
+1. Copy the entire FunctionCalls.tsx file to your concepts folder
+2. Import: import FunctionCalls from '../../../concepts/FunctionCalls';
+3. Use: <FunctionCalls />
 
-2. Use the component in your JSX:
-   <FunctionCalls />
-
-Details:
-- This component demonstrates how to define and call functions, pass arguments, and handle return values.
-- It is intended for educational purposes and can be used in any screen or demo to show function invocation.
-
-To use FunctionCalls in another component, import it and render it directly.
+Shows basic calls, callbacks, higher-order functions, and method chaining.
 */
 
-import FunctionCalls from '@/concepts/FunctionCalls';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import FunctionCalls from '../../../concepts/FunctionCalls';
 
 export default function FunctionCallsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Function Calls Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Function Calls Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of JavaScript/TypeScript function calling patterns.
+          Demonstrates argument passing, callbacks, and advanced invocation techniques.
+        </ThemedText>
+      </View>
+
       <FunctionCalls />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

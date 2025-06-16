@@ -1,44 +1,58 @@
 /*
 Loops
 -----
-This component demonstrates different types of loops in JavaScript/TypeScript (for, forEach, while).
+Demonstrates different loop types including for, forEach, map, and while loops.
 
-How to use:
-1. Use a for loop to iterate a set number of times.
-2. Use forEach to iterate over array elements.
-3. Use a while loop to repeat code while a condition is true.
-
-Example:
-for (let i = 0; i < arr.length; i++) { ... }
-arr.forEach((num) => { ... });
-while (count < 2) { ... }
+Copy this file to your project's concepts folder and import it where needed.
+Perfect for understanding iteration patterns and array processing techniques.
 */
 
 import React from 'react';
 import { Text, View } from 'react-native';
 
 const Loops = () => {
-  // Loops
-  const arr = [1, 2, 3];
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+  const numbers = [1, 2, 3, 4, 5];
+  const fruits = ['apple', 'banana', 'orange'];
+
+  // For loop - traditional iteration
+  let forLoopSum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    forLoopSum += numbers[i];
   }
-  let forEachResult = '';
-  arr.forEach((num) => {
-    forEachResult += num + ' ';
+
+  // For...of loop - modern array iteration
+  let forOfSum = 0;
+  for (const num of numbers) {
+    forOfSum += num;
+  }
+
+  // forEach - functional array iteration
+  let forEachResult: string[] = [];
+  fruits.forEach((fruit, index) => {
+    forEachResult.push(`${index + 1}. ${fruit}`);
   });
-  let whileResult = 0;
-  let count = 0;
-  while (count < 2) {
-    whileResult += count;
-    count++;
+
+  // Map - transformation
+  const doubled = numbers.map(num => num * 2);
+
+  // While loop
+  let whileCount = 0;
+  let whileSum = 0;
+  while (whileCount < 3) {
+    whileSum += whileCount;
+    whileCount++;
   }
+
   return (
-    <View>
-      <Text>For loop sum: {sum}</Text>
-      <Text>forEach: {forEachResult.trim()}</Text>
-      <Text>While loop: {whileResult}</Text>
+    <View style={{ padding: 16, backgroundColor: '#f5f5f5', borderRadius: 8 }}>
+      <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 8 }}>
+        Loop Examples
+      </Text>
+      <Text>For loop sum: {forLoopSum}</Text>
+      <Text>For...of sum: {forOfSum}</Text>
+      <Text>forEach list: {forEachResult.join(', ')}</Text>
+      <Text>Map doubled: [{doubled.join(', ')}]</Text>
+      <Text>While loop sum: {whileSum}</Text>
     </View>
   );
 };

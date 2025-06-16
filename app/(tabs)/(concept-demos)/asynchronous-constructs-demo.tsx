@@ -1,31 +1,57 @@
 /*
 Asynchronous Constructs Demo
----------------------------
-This demo shows how to use the AsynchronousConstructs concept component to illustrate async/await, promises, and other asynchronous patterns in JavaScript/TypeScript.
+----------------------------
+Copy-paste example showing Promises, async/await, and concurrent operations.
 
-Usage Steps:
-1. Import the AsynchronousConstructs concept component:
-   import AsynchronousConstructs from '@/concepts/AsynchronousConstructs';
+1. Copy the entire AsynchronousConstructs.tsx file to your concepts folder
+2. Import: import AsynchronousConstructs from '../../../concepts/AsynchronousConstructs';
+3. Use: <AsynchronousConstructs />
 
-2. Use the component in your JSX:
-   <AsynchronousConstructs />
-
-Details:
-- This component demonstrates asynchronous programming concepts such as promises, async/await, and callbacks.
-- It is intended for educational purposes and can be used in any screen or demo to show async code patterns.
-
-To use AsynchronousConstructs in another component, import it and render it directly.
+Shows async patterns, Promise handling, and React useEffect integration.
 */
 
-import AsynchronousConstructs from '@/concepts/AsynchronousConstructs';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import AsynchronousConstructs from '../../../concepts/AsynchronousConstructs';
 
 export default function AsynchronousConstructsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Asynchronous Constructs Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Asynchronous Constructs Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of JavaScript/TypeScript async patterns.
+          Demonstrates Promises, async/await, and concurrent operation handling.
+        </ThemedText>
+      </View>
+
       <AsynchronousConstructs />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

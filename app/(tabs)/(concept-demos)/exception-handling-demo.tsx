@@ -1,31 +1,57 @@
 /*
 Exception Handling Demo
-----------------------
-This demo shows how to use the ExceptionHandling concept component to illustrate try/catch/finally and error handling in code.
+-----------------------
+Copy-paste example showing try/catch/finally and error handling patterns.
 
-Usage Steps:
-1. Import the ExceptionHandling concept component:
-   import ExceptionHandling from '@/concepts/ExceptionHandling';
+1. Copy the entire ExceptionHandling.tsx file to your concepts folder
+2. Import: import ExceptionHandling from '../../../concepts/ExceptionHandling';
+3. Use: <ExceptionHandling />
 
-2. Use the component in your JSX:
-   <ExceptionHandling />
-
-Details:
-- This component demonstrates how to handle exceptions and errors in JavaScript/TypeScript.
-- It is intended for educational purposes and can be used in any screen or demo to show error handling patterns.
-
-To use ExceptionHandling in another component, import it and render it directly.
+Shows error handling, async error management, and exception recovery patterns.
 */
 
-import ExceptionHandling from '@/concepts/ExceptionHandling';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import ExceptionHandling from '../../../concepts/ExceptionHandling';
 
 export default function ExceptionHandlingDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Exception Handling Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Exception Handling Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of JavaScript/TypeScript error handling.
+          Demonstrates try/catch/finally blocks and async error management.
+        </ThemedText>
+      </View>
+
       <ExceptionHandling />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

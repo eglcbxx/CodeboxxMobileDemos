@@ -1,31 +1,42 @@
 /*
 Type Declarations Demo
 ---------------------
-This demo shows how to use the TypeDeclarations concept component to illustrate type annotations and declarations in TypeScript.
+This demo shows how to use the TypeDeclarations concept component.
 
-Usage Steps:
-1. Import the TypeDeclarations concept component:
-   import TypeDeclarations from '@/concepts/TypeDeclarations';
-
-2. Use the component in your JSX:
-   <TypeDeclarations />
-
-Details:
-- This component demonstrates how to declare types for variables, functions, and objects.
-- It is intended for educational purposes and can be used in any screen or demo to show type safety and usage.
-
-To use TypeDeclarations in another component, import it and render it directly.
+Copy-paste instructions:
+1. Copy the entire TypeDeclarations component from ../../../concepts/TypeDeclarations.tsx
+2. Import and use: <TypeDeclarations />
+3. The component demonstrates type aliases, interfaces, generics, and advanced TypeScript type patterns
 */
 
-import TypeDeclarations from '@/concepts/TypeDeclarations';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import TypeDeclarations from '../../../concepts/TypeDeclarations';
 
 export default function TypeDeclarationsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Type Declarations Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedView style={styles.contextBox}>
+        <ThemedText type="title">Type Declarations Demo</ThemedText>
+        <ThemedText type="default">
+          This demo shows TypeScript type declarations including type aliases, interfaces, generics, and advanced type patterns.
+        </ThemedText>
+      </ThemedView>
       <TypeDeclarations />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+  },
+  contextBox: {
+    padding: 16,
+    backgroundColor: 'rgba(0, 100, 200, 0.1)',
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+});

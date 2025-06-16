@@ -1,31 +1,57 @@
 /*
 Classes and Objects Demo
------------------------
-This demo shows how to use the ClassesAndObjects concept component to illustrate object-oriented programming with classes and objects.
+------------------------
+Copy-paste example showing object-oriented programming implementation.
 
-Usage Steps:
-1. Import the ClassesAndObjects concept component:
-   import ClassesAndObjects from '@/concepts/ClassesAndObjects';
+1. Copy the entire ClassesAndObjects.tsx file to your concepts folder
+2. Import: import ClassesAndObjects from '../../../concepts/ClassesAndObjects';
+3. Use: <ClassesAndObjects />
 
-2. Use the component in your JSX:
-   <ClassesAndObjects />
-
-Details:
-- This component demonstrates class definitions, object instantiation, and OOP principles.
-- It is intended for educational purposes and can be used in any screen or demo to show OOP basics.
-
-To use ClassesAndObjects in another component, import it and render it directly.
+Shows classes, inheritance, static methods, encapsulation, and OOP principles.
 */
 
-import ClassesAndObjects from '@/concepts/ClassesAndObjects';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import ClassesAndObjects from '../../../concepts/ClassesAndObjects';
 
 export default function ClassesAndObjectsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Classes and Objects Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Classes and Objects Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of TypeScript classes and objects.
+          Demonstrates OOP principles, inheritance, encapsulation, and static methods.
+        </ThemedText>
+      </View>
+
       <ClassesAndObjects />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

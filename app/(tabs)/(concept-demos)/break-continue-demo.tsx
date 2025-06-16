@@ -1,31 +1,57 @@
 /*
 Break and Continue Demo
-----------------------
-This demo shows how to use the BreakContinue concept component to illustrate the use of break and continue statements in loops.
+-----------------------
+Copy-paste example showing loop control statements implementation.
 
-Usage Steps:
-1. Import the BreakContinue concept component:
-   import BreakContinue from '@/concepts/BreakContinue';
+1. Copy the entire BreakContinue.tsx file to your concepts folder
+2. Import: import BreakContinue from '../../../concepts/BreakContinue';
+3. Use: <BreakContinue />
 
-2. Use the component in your JSX:
-   <BreakContinue />
-
-Details:
-- This component demonstrates how break and continue work in for/while loops.
-- It is intended for educational purposes and can be used in any screen or demo to show loop control flow.
-
-To use BreakContinue in another component, import it and render it directly.
+Shows break, continue, labeled breaks, and practical loop control patterns.
 */
 
-import BreakContinue from '@/concepts/BreakContinue';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import BreakContinue from '../../../concepts/BreakContinue';
 
 export default function BreakContinueDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Break and Continue Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Break and Continue Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of break and continue statements.
+          Demonstrates loop control, early termination, and iteration skipping patterns.
+        </ThemedText>
+      </View>
+
       <BreakContinue />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

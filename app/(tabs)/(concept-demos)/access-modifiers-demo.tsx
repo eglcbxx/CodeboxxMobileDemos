@@ -1,31 +1,57 @@
 /*
 Access Modifiers Demo
 ---------------------
-This demo shows how to use the AccessModifiers concept component to illustrate public, private, and protected members in classes.
+Copy-paste example showing TypeScript access modifiers implementation.
 
-Usage Steps:
-1. Import the AccessModifiers concept component:
-   import AccessModifiers from '@/concepts/AccessModifiers';
+1. Copy the entire AccessModifiers.tsx file to your concepts folder
+2. Import: import AccessModifiers from '../../../concepts/AccessModifiers';
+3. Use: <AccessModifiers />
 
-2. Use the component in your JSX:
-   <AccessModifiers />
-
-Details:
-- This component demonstrates how access modifiers work in TypeScript/JavaScript classes.
-- It is intended for educational purposes and can be used in any screen or demo to show access control in OOP.
-
-To use AccessModifiers in another component, import it and render it directly.
+Shows public, private, and protected class members with inheritance examples.
 */
 
-import AccessModifiers from '@/concepts/AccessModifiers';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import AccessModifiers from '../../../concepts/AccessModifiers';
 
 export default function AccessModifiersDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Access Modifiers Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Access Modifiers Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of TypeScript access modifiers (public, private, protected).
+          Demonstrates encapsulation, inheritance, and controlled access patterns.
+        </ThemedText>
+      </View>
+
       <AccessModifiers />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

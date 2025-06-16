@@ -1,28 +1,69 @@
 /*
 Type Declarations
-----------------
-This component demonstrates how to declare types in TypeScript.
+-----------------
+Demonstrates TypeScript type definitions including interfaces, types, and unions.
 
-How to use:
-1. Use the 'type' keyword to define a custom type.
-2. Use the type in variable declarations or function signatures.
-
-Example:
-type MyType = string | number;
-const value: MyType = 'TypeScript';
+Copy this file to your project's concepts folder and import it where needed.
+Perfect for understanding TypeScript type system and custom type definitions.
 */
 
 import React from 'react';
 import { Text, View } from 'react-native';
 
-type MyType = string | number;
+// Type aliases
+type Status = 'loading' | 'success' | 'error';
+type StringOrNumber = string | number;
+
+// Interface definitions
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
+
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  category?: string; // Optional property
+}
 
 const TypeDeclarations = () => {
-  // Type declarations (in typed languages)
-  const value: MyType = 'TypeScript';
+  // Using type aliases
+  const currentStatus: Status = 'success';
+  const flexibleValue: StringOrNumber = 42;
+  
+  // Using interfaces
+  const user: User = {
+    id: 1,
+    name: 'John Doe',
+    email: 'john@example.com',
+    isActive: true
+  };
+  
+  const product: Product = {
+    id: 101,
+    title: 'TypeScript Guide',
+    price: 29.99
+  };
+
+  // Function with typed parameters
+  const formatUser = (userData: User): string => {
+    return `${userData.name} (${userData.email})`;
+  };
+
   return (
-    <View>
-      <Text>Type: {value}</Text>
+    <View style={{ padding: 16, backgroundColor: '#f5f5f5', borderRadius: 8 }}>
+      <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 8 }}>
+        Type Declarations Examples
+      </Text>
+      <Text>Status: {currentStatus}</Text>
+      <Text>Flexible value: {flexibleValue}</Text>
+      <Text>User: {formatUser(user)}</Text>
+      <Text>Active: {user.isActive ? 'Yes' : 'No'}</Text>
+      <Text>Product: {product.title} - ${product.price}</Text>
+      <Text>Category: {product.category || 'Uncategorized'}</Text>
     </View>
   );
 };

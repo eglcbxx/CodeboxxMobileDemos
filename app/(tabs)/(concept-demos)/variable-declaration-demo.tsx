@@ -1,31 +1,29 @@
 /*
 Variable Declaration Demo
-------------------------
-This demo shows how to use the VariableDeclaration concept component to illustrate variable declaration and assignment in JavaScript/TypeScript.
-
-Usage Steps:
-1. Import the VariableDeclaration concept component:
-   import VariableDeclaration from '@/concepts/VariableDeclaration';
-
-2. Use the component in your JSX:
-   <VariableDeclaration />
-
-Details:
-- This component demonstrates how to declare variables using let, const, and var, and assign values.
-- It is intended for educational purposes and can be used in any screen or demo to show variable usage.
-
-To use VariableDeclaration in another component, import it and render it directly.
+-------------------------
+Copy this demo to see variable declaration concepts in action.
+Demonstrates const and let usage patterns with practical examples and visual feedback.
 */
 
-import VariableDeclaration from '@/concepts/VariableDeclaration';
-import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, View } from 'react-native';
+import { ThemedText } from '../../../components/ThemedText';
+import VariableDeclaration from '../../../concepts/VariableDeclaration';
 
 export default function VariableDeclarationDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Variable Declaration Demo</Text>
+    <ScrollView style={{ flex: 1, padding: 16 }}>
+      <ThemedText style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 16 }}>
+        Variable Declaration Concept Demo
+      </ThemedText>
+      
       <VariableDeclaration />
+      
+      <View style={{ marginTop: 24, padding: 16, backgroundColor: '#e8f4fd', borderRadius: 8 }}>
+        <ThemedText style={{ fontSize: 14, color: '#666', textAlign: 'center' }}>
+          Copy the VariableDeclaration concept to learn about const and let variable declarations.
+          Perfect for understanding variable scoping and assignment in TypeScript.
+        </ThemedText>
+      </View>
     </ScrollView>
   );
 }

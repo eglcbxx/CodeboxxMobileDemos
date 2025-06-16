@@ -1,31 +1,29 @@
 /*
-useState Example Demo
----------------------
-This demo shows how to use the UseStateExample concept component to illustrate the useState hook in React.
-
-Usage Steps:
-1. Import the UseStateExample concept component:
-   import UseStateExample from '@/concepts/UseStateExample';
-
-2. Use the component in your JSX:
-   <UseStateExample />
-
-Details:
-- This component demonstrates how to use useState for managing state in functional components.
-- It is intended for educational purposes and can be used in any screen or demo to show state management in React.
-
-To use UseStateExample in another component, import it and render it directly.
+useState Hook Demo
+------------------
+Copy this demo to explore React state management with practical interactive examples.
+Shows counter, text, boolean, and object state management patterns.
 */
 
-import UseStateExample from '@/concepts/UseStateExample';
-import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, View } from 'react-native';
+import { ThemedText } from '../../../components/ThemedText';
+import UseStateExample from '../../../concepts/UseStateExample';
 
 export default function UseStateExampleDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>useState Example Demo</Text>
+    <ScrollView style={{ flex: 1, padding: 16 }}>
+      <ThemedText style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 16 }}>
+        useState Hook Concept Demo
+      </ThemedText>
+      
       <UseStateExample />
+      
+      <View style={{ marginTop: 24, padding: 16, backgroundColor: '#e8f4fd', borderRadius: 8 }}>
+        <ThemedText style={{ fontSize: 14, color: '#666', textAlign: 'center' }}>
+          Copy the UseStateExample concept to learn about React state management.
+          Perfect for understanding reactivity, re-rendering, and interactive UI patterns.
+        </ThemedText>
+      </View>
     </ScrollView>
   );
 }

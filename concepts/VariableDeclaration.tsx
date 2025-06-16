@@ -1,27 +1,30 @@
 /*
-Variable Declaration and Assignment
-----------------------------------
-This component demonstrates how to declare and assign variables in JavaScript/TypeScript.
+Variable Declaration
+--------------------
+Demonstrates variable declaration and assignment using const, let, and var in TypeScript.
 
-How to use:
-1. Declare a variable using const, let, or var.
-2. Assign a value to the variable.
-3. Use the variable in your code (e.g., display it in JSX).
-
-Example:
-const message = 'Hello, variable!';
-<Text>{message}</Text>
+Copy this file to your project's concepts folder and import it where needed.
+Perfect for understanding variable scoping and assignment patterns.
 */
 
 import React from 'react';
 import { Text, View } from 'react-native';
 
 const VariableDeclaration = () => {
-  // Variable declaration and assignment
-  const message = 'Hello, variable!';
+  // Different types of variable declarations
+  const constantValue = 'This cannot be reassigned';
+  let mutableValue = 'This can be reassigned';
+  
+  // Reassigning let variable
+  mutableValue = 'Updated value';
+
   return (
-    <View>
-      <Text>Variable value: {message}</Text>
+    <View style={{ padding: 16, backgroundColor: '#f5f5f5', borderRadius: 8 }}>
+      <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 8 }}>
+        Variable Declaration Examples
+      </Text>
+      <Text>Const: {constantValue}</Text>
+      <Text>Let: {mutableValue}</Text>
     </View>
   );
 };

@@ -1,31 +1,29 @@
 /*
 Loops Demo
 ----------
-This demo shows how to use the Loops concept component to illustrate for, while, and do-while loops in JavaScript/TypeScript.
-
-Usage Steps:
-1. Import the Loops concept component:
-   import Loops from '@/concepts/Loops';
-
-2. Use the component in your JSX:
-   <Loops />
-
-Details:
-- This component demonstrates different loop constructs and their usage.
-- It is intended for educational purposes and can be used in any screen or demo to show iteration patterns.
-
-To use Loops in another component, import it and render it directly.
+Copy this demo to explore loop concepts with practical examples.
+Shows for, for...of, forEach, map, and while loops in action.
 */
 
-import Loops from '@/concepts/Loops';
-import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, View } from 'react-native';
+import { ThemedText } from '../../../components/ThemedText';
+import Loops from '../../../concepts/Loops';
 
 export default function LoopsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Loops Demo</Text>
+    <ScrollView style={{ flex: 1, padding: 16 }}>
+      <ThemedText style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 16 }}>
+        Loops Concept Demo
+      </ThemedText>
+      
       <Loops />
+      
+      <View style={{ marginTop: 24, padding: 16, backgroundColor: '#e8f4fd', borderRadius: 8 }}>
+        <ThemedText style={{ fontSize: 14, color: '#666', textAlign: 'center' }}>
+          Copy the Loops concept to learn about iteration patterns and array processing.
+          Perfect for understanding different loop types and their use cases.
+        </ThemedText>
+      </View>
     </ScrollView>
   );
 }

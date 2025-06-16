@@ -1,31 +1,57 @@
-import FunctionsAndMethods from '@/concepts/FunctionsAndMethods';
-import React from 'react';
-import { ScrollView, Text } from 'react-native';
-
 /*
 Functions and Methods Demo
--------------------------
-This demo shows how to use the FunctionsAndMethods concept component to illustrate the difference between functions and methods in JavaScript/TypeScript.
+--------------------------
+Copy-paste example showing function declarations, arrow functions, and method implementations.
 
-Usage Steps:
-1. Import the FunctionsAndMethods concept component:
-   import FunctionsAndMethods from '@/concepts/FunctionsAndMethods';
+1. Copy the entire FunctionsAndMethods.tsx file to your concepts folder
+2. Import: import FunctionsAndMethods from '../../../concepts/FunctionsAndMethods';
+3. Use: <FunctionsAndMethods />
 
-2. Use the component in your JSX:
-   <FunctionsAndMethods />
-
-Details:
-- This component demonstrates standalone functions, class methods, and their usage.
-- It is intended for educational purposes and can be used in any screen or demo to show function/method syntax and invocation.
-
-To use FunctionsAndMethods in another component, import it and render it directly.
+Shows regular functions, arrow functions, optional parameters, and object methods.
 */
+
+import { ThemedText } from '@/components/ThemedText';
+import React from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import FunctionsAndMethods from '../../../concepts/FunctionsAndMethods';
 
 export default function FunctionsAndMethodsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Functions and Methods Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Functions and Methods Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of JavaScript/TypeScript function patterns.
+          Demonstrates function declarations, arrow functions, and object method definitions.
+        </ThemedText>
+      </View>
+
       <FunctionsAndMethods />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

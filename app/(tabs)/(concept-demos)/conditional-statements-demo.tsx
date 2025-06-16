@@ -1,31 +1,29 @@
 /*
 Conditional Statements Demo
---------------------------
-This demo shows how to use the ConditionalStatements concept component to illustrate if, else, and switch statements in code.
-
-Usage Steps:
-1. Import the ConditionalStatements concept component:
-   import ConditionalStatements from '@/concepts/ConditionalStatements';
-
-2. Use the component in your JSX:
-   <ConditionalStatements />
-
-Details:
-- This component demonstrates conditional logic in TypeScript/JavaScript.
-- It is intended for educational purposes and can be used in any screen or demo to show branching logic.
-
-To use ConditionalStatements in another component, import it and render it directly.
+---------------------------
+Copy this demo to explore conditional logic concepts with practical examples.
+Shows if/else statements, ternary operators, and switch cases in action.
 */
 
-import ConditionalStatements from '@/concepts/ConditionalStatements';
-import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, View } from 'react-native';
+import { ThemedText } from '../../../components/ThemedText';
+import ConditionalStatements from '../../../concepts/ConditionalStatements';
 
 export default function ConditionalStatementsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Conditional Statements Demo</Text>
+    <ScrollView style={{ flex: 1, padding: 16 }}>
+      <ThemedText style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 16 }}>
+        Conditional Statements Concept Demo
+      </ThemedText>
+      
       <ConditionalStatements />
+      
+      <View style={{ marginTop: 24, padding: 16, backgroundColor: '#e8f4fd', borderRadius: 8 }}>
+        <ThemedText style={{ fontSize: 14, color: '#666', textAlign: 'center' }}>
+          Copy the ConditionalStatements concept to learn about if/else, ternary operators, and switch cases.
+          Perfect for understanding conditional logic and control flow patterns.
+        </ThemedText>
+      </View>
     </ScrollView>
   );
 }

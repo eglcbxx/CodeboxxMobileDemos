@@ -1,31 +1,57 @@
 /*
 Comments Demo
 -------------
-This demo shows how to use the Comments concept component to illustrate the use of comments in code (single-line, multi-line, and documentation comments).
+Copy-paste example showing commenting patterns and documentation styles.
 
-Usage Steps:
-1. Import the Comments concept component:
-   import Comments from '@/concepts/Comments';
+1. Copy the entire Comments.tsx file to your concepts folder
+2. Import: import Comments from '../../../concepts/Comments';
+3. Use: <Comments />
 
-2. Use the component in your JSX:
-   <Comments />
-
-Details:
-- This component demonstrates different types of comments and their usage in code.
-- It is intended for educational purposes and can be used in any screen or demo to show best practices for code documentation.
-
-To use Comments in another component, import it and render it directly.
+Shows single-line, multi-line, JSDoc, and JSX commenting best practices.
 */
 
-import Comments from '@/concepts/Comments';
+import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import Comments from '../../../concepts/Comments';
 
 export default function CommentsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Comments Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedText style={styles.title}>Comments Demo</ThemedText>
+      
+      <View style={styles.contextBox}>
+        <ThemedText style={styles.contextText}>
+          Ready-to-copy implementation of JavaScript/TypeScript commenting patterns.
+          Demonstrates documentation styles, best practices, and commenting guidelines.
+        </ThemedText>
+      </View>
+
       <Comments />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    backgroundColor: '#ffffff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+    color: '#333',
+  },
+  contextBox: {
+    backgroundColor: '#e8f4ff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  contextText: {
+    fontSize: 14,
+    color: '#0066cc',
+    lineHeight: 20,
+  },
+});

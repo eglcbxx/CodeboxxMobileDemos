@@ -1,38 +1,37 @@
 /*
 Data Types
 ----------
-This component demonstrates the use of different data types in JavaScript/TypeScript.
+Demonstrates TypeScript data types including primitives, arrays, and objects.
 
-How to use:
-1. Declare variables with different types (string, number, boolean, array, object).
-2. Assign values of the correct type to each variable.
-3. Use these variables in your code (e.g., display them in JSX).
-
-Example:
-const str: string = 'String';
-const num: number = 42;
-const bool: boolean = true;
-const arr: number[] = [1, 2, 3];
-const obj = { key: 'value' };
+Copy this file to your project's concepts folder and import it where needed.
+Perfect for understanding TypeScript type annotations and data structure usage.
 */
 
 import React from 'react';
 import { Text, View } from 'react-native';
 
 const DataTypes = () => {
-  // Data types
-  const str: string = 'String';
-  const num: number = 42;
-  const bool: boolean = true;
-  const arr: number[] = [1, 2, 3];
-  const obj = { key: 'value' };
+  // TypeScript data types with explicit annotations
+  const stringValue: string = 'Hello TypeScript';
+  const numberValue: number = 42;
+  const booleanValue: boolean = true;
+  const arrayValue: number[] = [1, 2, 3, 4, 5];
+  const objectValue: { name: string; age: number } = { name: 'John', age: 30 };
+  const nullValue: null = null;
+  const undefinedValue: undefined = undefined;
+
   return (
-    <View>
-      <Text>String: {str}</Text>
-      <Text>Number: {num}</Text>
-      <Text>Boolean: {bool ? 'true' : 'false'}</Text>
-      <Text>Array: {arr.join(', ')}</Text>
-      <Text>Object: {obj.key}</Text>
+    <View style={{ padding: 16, backgroundColor: '#f5f5f5', borderRadius: 8 }}>
+      <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 8 }}>
+        TypeScript Data Types
+      </Text>
+      <Text>String: {stringValue}</Text>
+      <Text>Number: {numberValue}</Text>
+      <Text>Boolean: {booleanValue ? 'true' : 'false'}</Text>
+      <Text>Array: [{arrayValue.join(', ')}]</Text>
+      <Text>Object: {objectValue.name}, {objectValue.age} years old</Text>
+      <Text>Null: {nullValue === null ? 'null' : 'not null'}</Text>
+      <Text>Undefined: {undefinedValue === undefined ? 'undefined' : 'defined'}</Text>
     </View>
   );
 };

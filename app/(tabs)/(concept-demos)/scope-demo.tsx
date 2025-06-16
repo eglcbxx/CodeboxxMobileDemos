@@ -1,31 +1,42 @@
 /*
 Scope Demo
 ----------
-This demo shows how to use the Scope concept component to illustrate variable/function scope in JavaScript/TypeScript.
+This demo shows how to use the Scope concept component.
 
-Usage Steps:
-1. Import the Scope concept component:
-   import Scope from '@/concepts/Scope';
-
-2. Use the component in your JSX:
-   <Scope />
-
-Details:
-- This component demonstrates local, global, and block scope.
-- It is intended for educational purposes and can be used in any screen or demo to show scope rules and examples.
-
-To use Scope in another component, import it and render it directly.
+Copy-paste instructions:
+1. Copy the entire Scope component from ../../../concepts/Scope.tsx
+2. Import and use: <Scope />
+3. The component demonstrates lexical scoping, closures, variable shadowing, and scope rules
 */
 
-import Scope from '@/concepts/Scope';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import Scope from '../../../concepts/Scope';
 
 export default function ScopeDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Scope Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedView style={styles.contextBox}>
+        <ThemedText type="title">Scope Demo</ThemedText>
+        <ThemedText type="default">
+          This demo shows variable and function scope including lexical scoping, closures, and variable shadowing in JavaScript/TypeScript.
+        </ThemedText>
+      </ThemedView>
       <Scope />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+  },
+  contextBox: {
+    padding: 16,
+    backgroundColor: 'rgba(0, 100, 200, 0.1)',
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+});

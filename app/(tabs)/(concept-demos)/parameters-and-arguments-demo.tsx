@@ -1,31 +1,42 @@
 /*
 Parameters and Arguments Demo
 ----------------------------
-This demo shows how to use the ParametersAndArguments concept component to illustrate function parameters and arguments in JavaScript/TypeScript.
+This demo shows how to use the ParametersAndArguments concept component.
 
-Usage Steps:
-1. Import the ParametersAndArguments concept component:
-   import ParametersAndArguments from '@/concepts/ParametersAndArguments';
-
-2. Use the component in your JSX:
-   <ParametersAndArguments />
-
-Details:
-- This component demonstrates how to define and use parameters and arguments in functions.
-- It is intended for educational purposes and can be used in any screen or demo to show function signatures and calls.
-
-To use ParametersAndArguments in another component, import it and render it directly.
+Copy-paste instructions:
+1. Copy the entire ParametersAndArguments component from ../../../concepts/ParametersAndArguments.tsx
+2. Import and use: <ParametersAndArguments />
+3. The component demonstrates function parameters, optional parameters, default values, and rest parameters
 */
 
-import ParametersAndArguments from '@/concepts/ParametersAndArguments';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import ParametersAndArguments from '../../../concepts/ParametersAndArguments';
 
 export default function ParametersAndArgumentsDemo() {
   return (
-    <ScrollView contentContainerStyle={{ padding: 16 }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>Parameters and Arguments Demo</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <ThemedView style={styles.contextBox}>
+        <ThemedText type="title">Parameters and Arguments Demo</ThemedText>
+        <ThemedText type="default">
+          This demo shows function parameters, arguments, default values, and various parameter patterns in TypeScript.
+        </ThemedText>
+      </ThemedView>
       <ParametersAndArguments />
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+  },
+  contextBox: {
+    padding: 16,
+    backgroundColor: 'rgba(0, 100, 200, 0.1)',
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+});
